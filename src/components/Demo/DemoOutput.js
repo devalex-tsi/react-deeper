@@ -1,3 +1,4 @@
+import React from "react";
 import MyParagraph from "./MyParagraph";
 
 const DemoOutput = props => {
@@ -5,4 +6,4 @@ const DemoOutput = props => {
     return <MyParagraph>{props.show ? 'New Paragraph' : ''}</MyParagraph>
 }
 
-export default DemoOutput
+export default React.memo(DemoOutput)

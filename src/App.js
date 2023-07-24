@@ -16,7 +16,7 @@ function App() {
     return (
         <div className="app">
             <h1>Hi there!</h1>
-            <DemoOutput show={isParagraphShown}/>
+            <DemoOutput show={false}/>
             <Button onClick={onClickBtn}>Show Paragraph</Button>
         </div>
     );
