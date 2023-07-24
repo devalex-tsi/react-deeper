@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useCallback, useState} from 'react';
 
 import './App.css';
 import Button from "./components/UI/Button/Button";
@@ -7,11 +7,11 @@ import DemoOutput from "./components/Demo/DemoOutput";
 function App() {
     const [isParagraphShown, setIsParagraphShown] = useState(false)
     console.log('APP RUNNING','isParagraphShown: ', isParagraphShown)
-    const onClickBtn = () => {
+    const onClickBtn = useCallback(() => {
         (setIsParagraphShown(
             prevShow => !prevShow
         ))
-    }
+    }, [])
 
     return (
         <div className="app">
