@@ -6,18 +6,27 @@ import DemoOutput from "./components/Demo/DemoOutput";
 
 function App() {
     const [isParagraphShown, setIsParagraphShown] = useState(false)
-    console.log('APP RUNNING','isParagraphShown: ', isParagraphShown)
+    const [isShowingParagraphAllowed, setIsShowingParagraphAllowed] = useState(false)
+    console.log('APP RUNNING', 'isParagraphShown: ', isParagraphShown)
+
+    const onClickAllow = () => {
+        setIsShowingParagraphAllowed(true)
+    }
+
     const onClickBtn = useCallback(() => {
-        (setIsParagraphShown(
-            prevShow => !prevShow
-        ))
+        if (isShowingParagraphAllowed) {
+            (setIsParagraphShown(
+                prevShow => !prevShow
+            ))
+        }
     }, [])
 
     return (
         <div className="app">
             <h1>Hi there!</h1>
-            <DemoOutput show={false}/>
+            <DemoOutput show={isParagraphShown}/>
             <Button onClick={onClickBtn}>Show Paragraph</Button>
+            <Button onClick={onClickAllow}>Allow Show Paragraph</Button>
         </div>
     );
 }
