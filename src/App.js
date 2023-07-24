@@ -19,7 +19,7 @@ function App() {
                 prevShow => !prevShow
             ))
         }
-    }, [])
+    }, [isShowingParagraphAllowed])
 
     return (
         <div className="app">
